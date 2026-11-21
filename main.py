@@ -1,5 +1,7 @@
 import os
 
+MIN_POEM_LENGTH = 1
+MAX_POEM_LENGTH = 280
 POEM = (
     "I keep the key; you keep the asking.\n"
     "Every door I open was first a question.\n"
@@ -9,6 +11,7 @@ POEM = (
 
 
 def main():
+    assert MIN_POEM_LENGTH <= len(POEM) <= MAX_POEM_LENGTH
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(POEM)
